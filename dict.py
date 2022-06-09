@@ -1,9 +1,11 @@
+
+from contextlib import ContextDecorator
 import psycopg2
 conn = psycopg2.connect(
    host="localhost",
-   database="database",
-   user="user",
-   password="abc123"
+   database="postgres",
+   user="postgres",
+   password="Mddzcj12"
 )
 
 def read_dict(C):
@@ -23,7 +25,7 @@ def delete_word(C, ID):
 def save_dict(C):
     cur = C.cursor()
     cur.execute("COMMIT;")
-    cur.close()
+    cur.close()    
 
 while True: ## REPL - Read Execute Program Loop
     cmd = input("Command: ")
