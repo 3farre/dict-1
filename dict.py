@@ -25,7 +25,16 @@ def delete_word(C, ID):
 def save_dict(C):
     cur = C.cursor()
     cur.execute("COMMIT;")
-    cur.close()    
+    cur.close() 
+
+list_of_commands = ("""Available list of commands: 
+list - list all words
+add - add a word to dictionary
+delete - delete a word from dictionary
+quit - exit dictionary""") 
+
+def print_help():
+    print(list_of_commands) 
 
 while True: ## REPL - Read Execute Program Loop
     cmd = input("Command: ")
@@ -38,6 +47,8 @@ while True: ## REPL - Read Execute Program Loop
     elif cmd == "delete":
         ID = input("  ID: ")
         delete_word(conn, ID)
+    elif cmd == "help":
+        print_help()
     elif cmd == "quit":
         save_dict(conn)
         exit()
