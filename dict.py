@@ -28,10 +28,10 @@ def save_dict(C):
     cur.close() 
 
 list_of_commands = ("""Available list of commands: 
-list - list all words
-add - add a word to dictionary
+list   - list all words
+add    - add a word to dictionary
 delete - delete a word from dictionary
-quit - exit dictionary""") 
+quit   - exit dictionary""") 
 
 def print_help():
     print(list_of_commands) 
